@@ -1,0 +1,23 @@
+<div class="home-container">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>Welcome to the Book Search Platform</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        This is your go-to place for books and reviews. Start searching now!
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="book-flex-container">
+  <mat-card *ngFor="let book of books" class="book-card">
+    <img mat-card-image [src]="book.cover" alt="Cover of {{ book.title }}" />
+    <mat-card-content>
+      <mat-card-title>{{ book.title }}</mat-card-title>
+      <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+      <p>{{ book.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

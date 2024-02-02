@@ -1,0 +1,24 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.welcome-card {
+    width: 600px;
+    margin: 20px;
+}
+
+.book-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.book-card {
+    flex: 0 0 auto;
+    max-width: 300px;
+    gap: 10px;
+}

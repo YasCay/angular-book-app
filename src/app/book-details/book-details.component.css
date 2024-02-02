@@ -1,0 +1,16 @@
+.book-detail-card {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}

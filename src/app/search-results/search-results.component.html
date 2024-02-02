@@ -1,0 +1,35 @@
+<div class="search-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Search for Book</mat-label>
+    <input matInput #searchInput />
+    <button mat-icon-button matSuffix (click)="search(searchInput.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-container *ngIf="!isLoading">
+    <mat-card *ngFor="let book of books" [routerLink]="['/details', book.key]" class="book-card">
+      
+      <!-- Container für das Bild -->
+      <div *ngIf="book.cover_i" class="book-cover">
+        <img [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-L.jpg'" alt="Book Cover" />
+      </div>
+  
+      <!-- Container für den Buchinhalt -->
+      <div class="book-content">
+        <mat-card-header>
+          <mat-card-title>{{ book.title }}</mat-card-title>
+          <mat-card-subtitle>{{ book.author_name?.join(", ") + " · " + book.first_publish_year}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ book.description }}</p>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </ng-container>
+  
+</div>
